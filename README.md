@@ -20,35 +20,25 @@ Default port is 9101
 
 ### localhost:9101/metrics
 ```
-temperature_gpu{gpu="TITAN X (Pascal)[0]"} 41
-utilization_gpu{gpu="TITAN X (Pascal)[0]"} 0
-utilization_memory{gpu="TITAN X (Pascal)[0]"} 0
-memory_total{gpu="TITAN X (Pascal)[0]"} 12189
-memory_free{gpu="TITAN X (Pascal)[0]"} 12189
-memory_used{gpu="TITAN X (Pascal)[0]"} 0
-temperature_gpu{gpu="TITAN X (Pascal)[1]"} 78
-utilization_gpu{gpu="TITAN X (Pascal)[1]"} 95
-utilization_memory{gpu="TITAN X (Pascal)[1]"} 59
-memory_total{gpu="TITAN X (Pascal)[1]"} 12189
-memory_free{gpu="TITAN X (Pascal)[1]"} 1738
-memory_used{gpu="TITAN X (Pascal)[1]"} 10451
-temperature_gpu{gpu="TITAN X (Pascal)[2]"} 83
-utilization_gpu{gpu="TITAN X (Pascal)[2]"} 99
-utilization_memory{gpu="TITAN X (Pascal)[2]"} 82
-memory_total{gpu="TITAN X (Pascal)[2]"} 12189
-memory_free{gpu="TITAN X (Pascal)[2]"} 190
-memory_used{gpu="TITAN X (Pascal)[2]"} 11999
-temperature_gpu{gpu="TITAN X (Pascal)[3]"} 84
-utilization_gpu{gpu="TITAN X (Pascal)[3]"} 97
-utilization_memory{gpu="TITAN X (Pascal)[3]"} 76
-memory_total{gpu="TITAN X (Pascal)[3]"} 12189
-memory_free{gpu="TITAN X (Pascal)[3]"} 536
-memory_used{gpu="TITAN X (Pascal)[3]"} 11653
+temperature_gpu{gpu="TITAN V[0]"} 40
+utilization_gpu{gpu="TITAN V[0]"} 0
+utilization_memory{gpu="TITAN V[0]"} 0
+memory_total{gpu="TITAN V[0]"} 12036
+memory_free{gpu="TITAN V[0]"} 12036
+memory_used{gpu="TITAN V[0]"} 0
+gpu_using_pid{gpu="TITAN V[0]"} 0
 ```
 
 ### Exact command
+
+To get temperature_gpu, utilization_gpu, utilization_memory, memory_total, memory_free, memory_used
 ```
 nvidia-smi --query-gpu=name,index,temperature.gpu,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv,noheader,nounits
+```
+
+To get gpu_using_pid
+```
+nvidia-smi | grep 'python' | awk '{ print $3 }'
 ```
 
 ### Prometheus example config
