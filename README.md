@@ -13,6 +13,10 @@ nvidia-smi metrics exporter for Prometheus
 ```
 Default port is 9101
 
+## Check
+```
+> sudo netstat -tnlp | grep gpu_exporter
+```
 
 ### localhost:9101/metrics
 ```
