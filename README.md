@@ -9,7 +9,7 @@ nvidia-smi metrics exporter for Prometheus
 
 ## Run
 ```
-> ./nvidia_smi_exporter [<port>]
+> nohup ./nvidia_smi_exporter &
 ```
 Default port is 9101
 
