@@ -15,7 +15,7 @@ Default port is 9101
 
 ## Check
 ```
-> sudo netstat -tnlp | grep gpu_exporter
+> sudo netstat -tnlp | grep 9101
 ```
 
 ### localhost:9101/metrics
